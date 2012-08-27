@@ -4,6 +4,11 @@ Misty's formulae
 This repository has various formulae which aren't in another fork for
 some or other reason. Really nothing that exciting here!
 
+Want to install something from here? First you need to:
+```
+brew tap mistydemeo/formulae
+```
+
 Formulae available
 ==================
 
