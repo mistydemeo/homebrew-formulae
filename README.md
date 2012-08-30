@@ -16,3 +16,9 @@ avi-metaedit
 ------------
 
 AVI metadata tool made available from the US National Archives.
+
+lensfun
+-------
+
+A library for correcting lens abberations in photos. Added as a
+dependency for Darktable.
