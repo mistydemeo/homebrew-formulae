@@ -17,6 +17,11 @@ avi-metaedit
 
 AVI metadata tool made available from the US National Archives.
 
+fidget
+------
+
+File ID format identification signature creation and testing utility.
+
 lensfun
 -------
 
