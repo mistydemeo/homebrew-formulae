@@ -22,6 +22,11 @@ fidget
 
 File ID format identification signature creation and testing utility.
 
+percipio
+--------
+
+File ID format signature creation utility.
+
 lensfun
 -------
 
