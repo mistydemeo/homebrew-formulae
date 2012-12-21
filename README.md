@@ -36,3 +36,8 @@ devices.
 
 This formula is just an installer for the binaries from the Argyll site
 as a convenience, and has been minimally tested so far.
+
+[compleat](http://limpet.net/mbrubeck/2009/10/30/compleat.html)
+--------
+
+Completion-writing tool for bash and zsh.
