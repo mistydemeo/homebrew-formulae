@@ -12,6 +12,11 @@ brew tap mistydemeo/formulae
 Formulae available
 ==================
 
+twee
+----
+
+A commandline compiler for [Twine](http://gimcrackd.com/etc/src/).
+
 lensfun
 -------
 
