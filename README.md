@@ -46,3 +46,8 @@ as a convenience, and has been minimally tested so far.
 --------
 
 Completion-writing tool for bash and zsh.
+
+aview
+-----
+
+Hackily customized noninteractive version of aview, the image-to-ASCII converter. This is needed to convert videos for [hotline](https://github.com/mistydemeo/hotline).
