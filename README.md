@@ -17,6 +17,10 @@ twee
 
 A commandline compiler for [Twine](http://gimcrackd.com/etc/src/).
 
+pandoc
+------
+[pandoc](http://johnmacfarlane.net/pandoc/) is an awesome document converter that's great for converting Markdown to anything. It's a pain to build since compiling from source requires ghc/haskell-platform and I got tired of that, so this formula installs from the official binary packages.
+
 lensfun
 -------
 
