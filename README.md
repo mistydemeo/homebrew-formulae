@@ -55,3 +55,8 @@ aview
 -----
 
 Hackily customized noninteractive version of aview, the image-to-ASCII converter. This is needed to convert videos for [hotline](https://github.com/mistydemeo/hotline).
+
+xmdp
+----
+
+Port of Future Crew's [MusicDiskPlayer](http://www.textfiles.com/computers/DOCUMENTATION/fcinfo17.txt) to the [libxmp](http://xmp.sourceforge.net/) playback library.
