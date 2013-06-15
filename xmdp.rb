@@ -6,7 +6,6 @@ class Xmdp < Formula
   sha1 '74f77ebd89c0827ae4b8a102c80ad5a16e949c97'
   version '497484a0b348016d2b87b7493f01e19257f8e92e'
 
-  depends_on 'pkg-config' => :build
   depends_on 'libxmp'
   depends_on 'sdl'
 
