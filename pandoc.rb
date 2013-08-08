@@ -6,13 +6,11 @@ class Pandoc < Formula
   sha1 '00fc2bde8a51e6d004e20948ac9b4a6fca466daf'
 
   def install
-    dev, name = `hdiutil attach pandoc-1.11.1.dmg`.scan(%r[^(/dev/\w+).+(/Volumes/.+)$]).pop
-    dev.gsub!(/s.$/, '')
-    cp_r name+'/pandoc-1.11.1.pkg', '.'
-    cd 'pandoc-1.11.1.pkg/Contents' do
-      system "pax", "--insecure", "-rz", "-f", "Archive.pax.gz", "-s", ",./usr/local,#{prefix},"
-    end
-    system "hdiutil", "eject", dev
+    mount = "dmg"
+    system "hdiutil", "attach", "pandoc-#{version}.dmg", "-mountpoint", mount
+    archive = "#{mount}/pandoc-#{version}.pkg/Contents/Archive.pax.gz"
+    system "pax", "--insecure", "-rz", "-f", archive, "-s", ",./usr/local,#{prefix},"
+    system "hdiutil", "eject", mount
   end
 
   test do
