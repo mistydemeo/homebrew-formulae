@@ -1,7 +1,7 @@
 require 'formula'
 
 class Twee < Formula
-  homepage 'http://gimcrackd.com/etc/src/'
+  homepage 'https://code.google.com/p/twee/'
   url 'http://twee.googlecode.com/files/twee-1.7.1.zip'
   sha1 'fd9e95b6486e6cfbd20196bbad38920a50ce824e'
   head 'https://github.com/tweecode/twee.git'
