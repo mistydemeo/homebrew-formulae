@@ -6,6 +6,7 @@ class Org2xm < Formula
   version "1.0"
   sha1 "a0c64aa12a01fc580193764491ee3153fa99e05e"
 
+  # -fnested-functions won't coerce clang to build this.
   fails_with :clang do
     cause "clang does not permit nested function definitions"
   end
