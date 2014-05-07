@@ -22,10 +22,6 @@ org2xm
 
 A utility to convert the soundtrack to Cave Story into FastTracker 2 .xm modules.
 
-pandoc
-------
-[pandoc](http://johnmacfarlane.net/pandoc/) is an awesome document converter that's great for converting Markdown to anything. Unfortunately it's a bit a pain to build since compiling from source requires ghc/haskell-platform and I got tired of that, so this formula installs from the official binary packages.
-
 darktable
 ---------
 
