@@ -22,6 +22,11 @@ org2xm
 
 A utility to convert the soundtrack to Cave Story into FastTracker 2 .xm modules.
 
+sfnt2woff
+---------
+
+Tool to convert between standard fonts and WOFF.
+
 darktable
 ---------
 
