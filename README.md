@@ -17,6 +17,11 @@ twee
 
 A commandline compiler for [Twine](http://gimcrackd.com/etc/src/).
 
+gopher
+------
+
+The classic curses-based client for the [gopher](http://en.wikipedia.org/wiki/Gopher_%28protocol%29) hypertext protocol.
+
 org2xm
 ------
 
