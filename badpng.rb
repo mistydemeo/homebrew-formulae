@@ -7,6 +7,7 @@ class Badpng < Formula
   def install
     system "make", "BUILD=#{ENV.cc}"
     bin.install "badpng"
+    man1.install "badpng.1"
   end
 
   test do
