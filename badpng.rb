@@ -5,7 +5,7 @@ class Badpng < Formula
   head "https://bitbucket.org/runhello/badpng", :using => :hg
 
   def install
-    system "make", "BUILD=#{ENV.cc}"
+    system "make"
     bin.install "badpng"
     man1.install "badpng.1"
   end
