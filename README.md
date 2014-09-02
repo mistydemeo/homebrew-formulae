@@ -22,6 +22,11 @@ gopher
 
 The classic curses-based client for the [gopher](http://en.wikipedia.org/wiki/Gopher_%28protocol%29) hypertext protocol.
 
+[badpng](https://bitbucket.org/runhello/badpng)
+------
+
+PNG corrupter / glitch art generator by [Andi McClure](http://runhello.com/).
+
 org2xm
 ------
 
