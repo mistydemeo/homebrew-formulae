@@ -1,15 +1,15 @@
 require 'formula'
 
 class Twee < Formula
-  homepage 'https://code.google.com/p/twee/'
+  homepage 'https://github.com/tweecode/twee/'
   url 'http://twee.googlecode.com/files/twee-1.7.1.zip'
   sha1 'fd9e95b6486e6cfbd20196bbad38920a50ce824e'
   head 'https://github.com/tweecode/twee.git'
 
   # Fixes scripts so that they find their libs regardless of where
   # the bin symlinks are installed to
-  # Submitted upstream as https://github.com/tweecode/twee/pull/6
-  def patches; DATA; end
+  # Merged upstream
+  patch :DATA unless build.head?
 
   def install
     libexec.install Dir['*']
