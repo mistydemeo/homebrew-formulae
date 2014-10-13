@@ -10,7 +10,7 @@ class MosaicCk < Formula
   depends_on "jpeg"
   depends_on "lesstif"
 
-  # non-void function 'hw_do_color' should return a value
+  # "non-void function 'hw_do_color' should return a value"
   fails_with :clang
 
   # Makes extensive use of direct struct access,
