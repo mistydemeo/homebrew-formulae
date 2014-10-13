@@ -27,6 +27,11 @@ The classic curses-based client for the [gopher](http://en.wikipedia.org/wiki/Go
 
 PNG corrupter / glitch art generator by [Andi McClure](http://runhello.com/).
 
+[mosaic-ck](http://www.floodgap.com/retrotech/machten/mosaic/)
+------
+
+Unofficial fork of the NCSA Mosaic web browser, allowing it to be used on modern OSs.
+
 org2xm
 ------
 
