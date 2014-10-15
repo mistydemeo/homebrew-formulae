@@ -13,8 +13,8 @@ class MosaicCk < Formula
 
   # Fixes build against modern libpng
   patch do
-    url "https://github.com/mistydemeo/mosaic-ck/commit/aa25bb3512604578a5add62df59604c338848331.diff"
-    sha1 "4e4636d97902d4ddc4d7706e5bcdc566b9fa2627"
+    url "https://github.com/mistydemeo/mosaic-ck/commit/32eb14ee8d65616c953e965c6a8b1d754eedc7a0.diff"
+    sha1 "1ffaeb455ff1b06bc06943ffa55eee9f63db069c"
   end
 
   # Fix redirects for URLs on the same domain
