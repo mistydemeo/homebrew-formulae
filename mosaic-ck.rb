@@ -9,32 +9,24 @@ class MosaicCk < Formula
   depends_on :x11
   depends_on "jpeg"
   depends_on "lesstif"
+  depends_on "libpng"
 
-  # Makes extensive use of direct struct access,
-  # which doesn't work with libpng 1.4+
-  resource "libpng" do
-    url "ftp://ftp.simplesystems.org/pub/libpng/png/src/libpng12/libpng-1.2.51.tar.gz"
-    sha1 "5175be08c4fa767b0d3d025f636e73e78780f988"
+  # Fixes build against modern libpng
+  patch do
+    url "https://github.com/mistydemeo/mosaic-ck/commit/aa25bb3512604578a5add62df59604c338848331.diff"
+    sha1 "4e4636d97902d4ddc4d7706e5bcdc566b9fa2627"
   end
 
   def install
-    # mosaic will statically link against libpng, so don't bother
-    # installing to the cellar.
-    resource("libpng").stage do
-      system "./configure", "--disable-dependency-tracking",
-                            "--disable-silent-rules",
-                            "--prefix=#{buildpath}/libpng"
-      system "make install"
-    end
-
     # Hardcodes library paths and attempts to link directly against
     # static libs, via their full paths, instead of
     # specifying -l and letting the linker find them.
     inreplace "makefiles/Makefile.osx" do |s|
-      s.change_make_var! "pngdir", "#{buildpath}/libpng"
+      s.change_make_var! "pngdir", Formula["libpng"].opt_prefix
       s.change_make_var! "jpegdir", Formula["jpeg"].opt_prefix
       s.gsub! "$(jpegdir)/lib/libjpeg.a", "-ljpeg"
       s.gsub! "$(pnglibdir)/libz.a", "-lz"
+      s.gsub! "$(pnglibdir)/libpng.a", "-lpng"
       s.change_make_var! "knrflag", "-Wno-return-type" if ENV.compiler == :clang
     end
 
