@@ -10,9 +10,6 @@ class MosaicCk < Formula
   depends_on "jpeg"
   depends_on "lesstif"
 
-  # "non-void function 'hw_do_color' should return a value"
-  fails_with :clang
-
   # Makes extensive use of direct struct access,
   # which doesn't work with libpng 1.4+
   resource "libpng" do
@@ -38,6 +35,7 @@ class MosaicCk < Formula
       s.change_make_var! "jpegdir", Formula["jpeg"].opt_prefix
       s.gsub! "$(jpegdir)/lib/libjpeg.a", "-ljpeg"
       s.gsub! "$(pnglibdir)/libz.a", "-lz"
+      s.change_make_var! "knrflag", "-Wno-return-type" if ENV.compiler == :clang
     end
 
     system "make", "osx"
