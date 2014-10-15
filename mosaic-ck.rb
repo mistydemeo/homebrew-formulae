@@ -17,6 +17,12 @@ class MosaicCk < Formula
     sha1 "4e4636d97902d4ddc4d7706e5bcdc566b9fa2627"
   end
 
+  # Fix redirects for URLs on the same domain
+  patch do
+    url "https://github.com/duckinator/mosaic-ck/commit/ffbb7ad9166da3f5d3524d63fb30469ba12c85e6.diff"
+    sha1 "89dfb7b7c238fb2c061f31aa3186a719d6ad409e"
+  end
+
   def install
     # Hardcodes library paths and attempts to link directly against
     # static libs, via their full paths, instead of
