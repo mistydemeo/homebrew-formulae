@@ -13,7 +13,9 @@ class Gbdk < Formula
   def install
     ENV.deparallelize
     mkdir "sdcc/bin" # makefile forgets to make this directory
-    system "make", "install", "TARGETDIR=#{prefix}", "TARGETCC=#{ENV.cc}", "TARGETCXX=#{ENV.cxx}"
+    system "make", "install", "TARGETDIR=#{libexec}", "TARGETCC=#{ENV.cc}", "TARGETCXX=#{ENV.cxx}"
+
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 end
 
