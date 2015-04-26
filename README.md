@@ -64,3 +64,8 @@ xmdp
 ----
 
 Port of Future Crew's [MusicDiskPlayer](http://www.textfiles.com/computers/DOCUMENTATION/fcinfo17.txt) to the [libxmp](http://xmp.sourceforge.net/) playback library.
+
+[adx2wav and wav2adx](http://www.geocities.co.jp/Playtown/2004/dcdev/index.html)
+-------------------
+
+Utilities for converting to and from the [ADX](http://wiki.multimedia.cx/index.php?title=CRI_ADX_ADPCM) sound format used by many video games on the Saturn, Dreamcast, and PS2.
