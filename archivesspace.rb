@@ -1,10 +1,10 @@
 class Archivesspace < Formula
   homepage "http://archivesspace.org/"
-  url "https://github.com/archivesspace/archivesspace/releases/download/v1.1.2/archivesspace-v1.1.2.zip"
-  version "1.1.2"
-  sha1 "7a000e0af9765842f7da1a06fcf102d9c2199213"
+  url "https://github.com/archivesspace/archivesspace/releases/download/v1.2.0/archivesspace-v1.2.0.zip"
+  version "1.2.0"
+  sha256 "c555b485c61a593002b9030c52b24245c64c803c392b33fcab9d145b7d8354aa"
 
-  depends_on :java => "1.6"
+  depends_on :java => "1.6+"
 
   def install
     libexec.install Dir["*"]
