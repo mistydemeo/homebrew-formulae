@@ -1,9 +1,9 @@
 class MosaicCk < Formula
   homepage "http://www.floodgap.com/retrotech/machten/mosaic/"
-  url "http://www.floodgap.com/retrotech/machten/mosaic/mosaic27ck9.tar.gz"
-  sha256 "23f6c34dc4b77dadac0e8613e3fa64666b28cdcedf7ade082723c23316b5578a"
-  version "2.7ck9"
-  revision 1
+  url "http://www.floodgap.com/retrotech/machten/mosaic/mosaic27ck10.tar.gz"
+  sha256 "6d95d5e3ce34fe04c0eac7bdb81fc5cf7970f35f4f0e872add63d9ec729f5710"
+  # Homebrew gets confused about the real version number
+  version "2.7-10ck"
 
   depends_on :x11
   depends_on "homebrew/x11/openmotif"
