@@ -1,26 +1,25 @@
-require "formula"
-
 class MosaicCk < Formula
   homepage "http://www.floodgap.com/retrotech/machten/mosaic/"
   url "http://www.floodgap.com/retrotech/machten/mosaic/mosaic27ck9.tar.gz"
-  sha1 "36766c1fd0c2ac3569e671837a6c9c1005f983c7"
+  sha256 "23f6c34dc4b77dadac0e8613e3fa64666b28cdcedf7ade082723c23316b5578a"
   version "2.7ck9"
+  revision 1
 
   depends_on :x11
+  depends_on "homebrew/x11/openmotif"
   depends_on "jpeg"
-  depends_on "lesstif"
   depends_on "libpng"
 
   # Fixes build against modern libpng
   patch do
     url "https://github.com/mistydemeo/mosaic-ck/commit/32eb14ee8d65616c953e965c6a8b1d754eedc7a0.diff"
-    sha1 "1ffaeb455ff1b06bc06943ffa55eee9f63db069c"
+    sha256 "a3b2aa7014769d3a36fda3b8de137db5d100ee182a5520982ff87b85c0fe9556"
   end
 
   # Fix redirects for URLs on the same domain
   patch do
     url "https://github.com/duckinator/mosaic-ck/commit/ffbb7ad9166da3f5d3524d63fb30469ba12c85e6.diff"
-    sha1 "89dfb7b7c238fb2c061f31aa3186a719d6ad409e"
+    sha256 "4afb89c3c3541403b673e893bc4bc140a6901a7deae9c039fabf1617635e1ab6"
   end
 
   def install
