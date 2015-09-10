@@ -1,8 +1,8 @@
 class Xenoglossia < Formula
   desc "Robust(?) string-manipulation language"
   homepage "https://github.com/mistydemeo/xenoglossia"
-  url "https://github.com/mistydemeo/xenoglossia/archive/v0.1.tar.gz"
-  sha256 "98140be14f086a0ce48abc4b4b2802c191d09addee258c32aa93332909fc9dd3"
+  url "https://github.com/mistydemeo/xenoglossia/archive/v0.2.tar.gz"
+  sha256 "0c26359a05d2feaa7ae5c90c3d68819aa5d36faa1307f531b66b37fdbef1703c"
 
   depends_on :python if MacOS.version <= :snow_leopard
 
