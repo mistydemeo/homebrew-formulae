@@ -4,8 +4,6 @@ class Wav2adx < Formula
   sha256 "311e868ea03aa4abd1ea2d46e08f34d5b29f436a5f51e54bb47a07fd4c77ef4f"
   version "2001-01-25"
 
-  depends_on "lha" => :build
-
   # Fix return type of convert function
   patch :DATA
 
