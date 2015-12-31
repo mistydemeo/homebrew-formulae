@@ -4,8 +4,6 @@ class Adx2wav < Formula
   version "02"
   sha256 "957b5f2029aeda2bcc367478cd484bb375b9cb7ee1749d9025ded8767a5dabfe"
 
-  depends_on "lha" => :build
-
   def install
     system "make", "adx2wav", "afs_extract"
     bin.install "adx2wav", "afs_extract"
