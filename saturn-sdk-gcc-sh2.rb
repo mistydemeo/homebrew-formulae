@@ -78,6 +78,9 @@ class SaturnSdkGccSh2 < Formula
     ENV["TARGETMACH"] = "sh-elf"
     ENV["BUILDMACH"] = "#{arch}-apple-darwin#{osmajor}"
     ENV["INSTALLDIR"] = prefix.to_s
+    # Ensures the temporary cross-compiler doesn't get moved to
+    # outside a sandbox-writeable directory
+    ENV["INSTALLDIR_BUILD_TARGET"] = "#{buildpath}/build_target"
     ENV["SYSROOTDIR"] = "#{prefix}/sysroot"
     ENV["ROOTDIR"] = buildpath.to_s
     ENV["DOWNLOADDIR"] = "#{buildpath}/download"
