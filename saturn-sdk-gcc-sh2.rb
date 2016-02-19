@@ -69,8 +69,6 @@ class SaturnSdkGccSh2 < Formula
     inreplace %w[build.sh build-canadian.sh] do |s|
       # we've already downloaded the resources
       s.gsub! "./download.sh", ""
-      # parallel build fails for unclear reasons
-      s.gsub! "export NCPU=`nproc`", "export NCPU=1"
     end
 
     ENV["SRCDIR"] = "#{buildpath}/source"
@@ -85,6 +83,8 @@ class SaturnSdkGccSh2 < Formula
     ENV["ROOTDIR"] = buildpath.to_s
     ENV["DOWNLOADDIR"] = "#{buildpath}/download"
     ENV["PROGRAM_PREFIX"] = "saturn-sh2-"
+    # TODO: is parallel build still broken now we're not using clang anymore?
+    ENV["NCPU"] = "1"
 
     system "./build-elf.sh"
 
