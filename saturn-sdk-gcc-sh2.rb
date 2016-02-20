@@ -80,8 +80,6 @@ class SaturnSdkGccSh2 < Formula
     ENV["SKIP_DOWNLOAD"] = "1"
     ENV["DOWNLOADDIR"] = "#{buildpath}/download"
     ENV["PROGRAM_PREFIX"] = "saturn-sh2-"
-    # TODO: is parallel build still broken now we're not using clang anymore?
-    ENV["NCPU"] = "1"
 
     system "./build-elf.sh"
 
