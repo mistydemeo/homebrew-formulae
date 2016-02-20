@@ -66,11 +66,6 @@ class SaturnSdkGccSh2 < Formula
       (buildpath/"download").install r
     end
 
-    inreplace %w[build.sh build-canadian.sh] do |s|
-      # we've already downloaded the resources
-      s.gsub! "./download.sh", ""
-    end
-
     ENV["SRCDIR"] = "#{buildpath}/source"
     ENV["BUILDDIR"] = "#{buildpath}/build"
     ENV["TARGETMACH"] = "sh-elf"
@@ -81,6 +76,8 @@ class SaturnSdkGccSh2 < Formula
     ENV["INSTALLDIR_BUILD_TARGET"] = "#{buildpath}/build_target"
     ENV["SYSROOTDIR"] = "#{prefix}/sysroot"
     ENV["ROOTDIR"] = buildpath.to_s
+    # we've already downloaded the resources
+    ENV["SKIP_DOWNLOAD"] = "1"
     ENV["DOWNLOADDIR"] = "#{buildpath}/download"
     ENV["PROGRAM_PREFIX"] = "saturn-sh2-"
     # TODO: is parallel build still broken now we're not using clang anymore?
