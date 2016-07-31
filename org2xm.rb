@@ -1,6 +1,5 @@
-require "formula"
-
 class Org2xm < Formula
+  desc "Tool to convert Cave Story .org files to .xm"
   homepage "http://rrrola.wz.cz/downloads.html"
   url "http://rrrola.wz.cz/files/org2xm.zip"
   version "1.0"
@@ -21,12 +20,12 @@ class Org2xm < Formula
 
       # org2xm has to be run in a specific directory; this wrapper
       # lets it be called from anywhere
-      (bin/'org2xm').write <<-EOS.undent
+      (bin/"org2xm").write <<-EOS.undent
       #!/usr/bin/env ruby
 
       ARGV[0] = File.expand_path(ARGV[0]) if ARGV[0]
       # org2xm must be run in this directory in order to find its samples.
-      Dir.chdir "#{share}/org2xm"
+      Dir.chdir "#{pkgshare}"
       exec "#{libexec}/org2xm", *ARGV
       EOS
     end
@@ -36,12 +35,12 @@ class Org2xm < Formula
     end
 
     # Full Cave Story soundtrack, plus requisite samples
-    (share/"org2xm").install "org", "samples"
+    pkgshare.install "org", "samples"
   end
 
   def caveats; <<-EOS.undent
     The full Cave Story soundtrack has been installed to:
-      #{share}/org2xm/org
+      #{pkgshare}/org
   EOS
   end
 end
