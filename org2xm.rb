@@ -4,7 +4,7 @@ class Org2xm < Formula
   homepage "http://rrrola.wz.cz/downloads.html"
   url "http://rrrola.wz.cz/files/org2xm.zip"
   version "1.0"
-  sha1 "a0c64aa12a01fc580193764491ee3153fa99e05e"
+  sha256 "988f4dd1a98757433dafb664adf259f833621926b5c011e185b6af4b013a52fb"
 
   fails_with :clang do
     cause "clang does not permit nested function definitions"
