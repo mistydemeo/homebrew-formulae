@@ -3,7 +3,7 @@ require "formula"
 class Gopher < Formula
   homepage "http://gopher.quux.org:70/give-me-gopher/"
   url "http://archive.ubuntu.com/ubuntu/pool/universe/g/gopher/gopher_3.0.13.tar.gz"
-  sha1 "112ad8f119d35e4aedfadf7b83387e175f27b5df"
+  sha256 "93ef1d9cbcda7e94c77592c6ae997260b5314a1e40887a38874cd40ebc7e1c96"
 
   def install
     # This is tremendously ugly!
