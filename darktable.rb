@@ -4,7 +4,7 @@ class Darktable < Formula
   homepage 'http://www.darktable.org/'
   url 'http://downloads.sourceforge.net/project/darktable/darktable/1.0/darktable-1.0.5.tar.gz'
   version '1.0.5'
-  sha1 'd007ada0f3fb3af6861de74323577b90eec3996e'
+  sha256 "0c18530446d2f2459fe533a1ef6fc2711300efe7466f36c23168ec2230fb5fbd"
   # --HEAD doesn't actually work atm and I don't feel like fixing it
   # head 'git://github.com/darktable-org/darktable.git'
 
