@@ -6,7 +6,7 @@ class MosaicCk < Formula
   version "2.7-10ck"
 
   depends_on :x11
-  depends_on "homebrew/x11/openmotif"
+  depends_on "openmotif"
   depends_on "jpeg"
   depends_on "libpng"
 
