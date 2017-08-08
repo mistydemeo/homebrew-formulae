@@ -26,10 +26,6 @@ class Ruby182 < Formula
   depends_on "openssl"
   depends_on :x11 if build.with? "tcltk"
 
-  fails_with :llvm do
-    build 2326
-  end
-
   # First patch fixes up a few incompatibilities with modern OpenSSL
   # ossl_x509stctx_set_time() definition taken from 1.8.6
   # Second patch backports a compatibility fix from Ruby 1.8.7 for newer OpenSSL versions
