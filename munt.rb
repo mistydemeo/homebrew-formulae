@@ -21,6 +21,6 @@ class Munt < Formula
 
   test do
     # Can't test real functionality without copyrighted ROMs
-    system "mt32emu-smf2wav", "-h"
+    system "#{bin}/mt32emu-smf2wav", "-h"
   end
 end
