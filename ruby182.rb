@@ -12,7 +12,7 @@ class Ruby182 < Formula
     sha256 "7791867a6be241be8af20d25727a4730040a738e66a2c21cd7046ce117be2fad" => :mountain_lion
   end
 
-  keg_only :provided_by_osx
+  keg_only :provided_by_macos
 
   option :universal
   option "with-suffix", "Suffix commands with '182'"
