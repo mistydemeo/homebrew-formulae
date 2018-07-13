@@ -65,6 +65,8 @@ class SaturnSdkGccSh2 < Formula
       (buildpath/"download").install r
     end
 
+    # At higher levels of parallelization, make race bugs have been observed
+    ENV["MAKEFLAGS"] = "-j#{[2, Hardware::CPU.cores].min}"
     ENV["SRCDIR"] = "#{buildpath}/source"
     ENV["BUILDDIR"] = "#{buildpath}/build"
     ENV["TARGETMACH"] = "sh-elf"
