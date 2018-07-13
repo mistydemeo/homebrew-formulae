@@ -23,23 +23,25 @@ class SaturnSdkGccSh2 < Formula
   homepage "https://segaxtreme.net/threads/another-saturn-sdk.23781/"
   head "https://github.com/SaturnSDK/Saturn-SDK-GCC-SH2.git"
 
+  depends_on "coreutils" => :build # for realpath
+
   # All of these are normally downloaded by the download.sh script;
   # they're specified here as :nounzip resources so we can model and download them instead.
   resource "binutils" do
-    url "http://ftpmirror.gnu.org/binutils/binutils-2.25.1.tar.bz2", :using => :nounzip
-    mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.25.1.tar.bz2"
-    sha256 "b5b14added7d78a8d1ca70b5cb75fef57ce2197264f4f5835326b0df22ac9f22"
+    url "http://ftpmirror.gnu.org/binutils/binutils-2.27.tar.bz2", :using => :nounzip
+    mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.27.tar.bz2"
+    sha256 "369737ce51587f92466041a97ab7d2358c6d9e1b6490b3940eb09fb0a9a6ac88"
   end
 
   resource "gcc" do
-    url "http://ftpmirror.gnu.org/gcc/gcc-5.3.0/gcc-5.3.0.tar.bz2", :using => :nounzip
-    mirror "https://ftp.gnu.org/gnu/gcc/gcc-5.3.0/gcc-5.3.0.tar.bz2"
-    sha256 "b84f5592e9218b73dbae612b5253035a7b34a9a1f7688d2e1bfaaf7267d5c4db"
+    url "http://ftpmirror.gnu.org/gcc/gcc-6.2.0/gcc-6.2.0.tar.bz2", :using => :nounzip
+    mirror "https://ftp.gnu.org/gnu/gcc/gcc-6.2.0/gcc-6.2.0.tar.bz2"
+    sha256 "9944589fc722d3e66308c0ce5257788ebd7872982a718aa2516123940671b7c5"
   end
 
   resource "gmp" do
-    url "https://gmplib.org/download/gmp/gmp-6.1.0.tar.bz2", :using => :nounzip
-    sha256 "498449a994efeba527885c10405993427995d3f86b8768d8cdf8d9dd7c6b73e8"
+    url "https://gmplib.org/download/gmp/gmp-6.1.1.tar.bz2", :using => :nounzip
+    sha256 "a8109865f2893f1373b0a8ed5ff7429de8db696fc451b1036bd7bdf95bbeffd6"
   end
 
   resource "libmpc" do
@@ -49,13 +51,13 @@ class SaturnSdkGccSh2 < Formula
   end
 
   resource "newlib" do
-    url "ftp://sourceware.org/pub/newlib/newlib-2.3.0.20160104.tar.gz", :using => :nounzip
-    sha256 "c92a0e02904bd4fbe1dd416ed94e786c66afbaeae484e4c26be8bb7c7c1e4cd1"
+    url "ftp://sourceware.org/pub/newlib/newlib-2.4.0.tar.gz", :using => :nounzip
+    sha256 "545b3d235e350d2c61491df8b9f775b1b972f191380db8f52ec0b1c829c52706"
   end
 
   resource "mpfr" do
-    url "http://ftpmirror.gnu.org/mpfr/mpfr-3.1.3.tar.bz2", :using => :nounzip
-    sha256 "f63bb459157cacd223caac545cb816bcdb5a0de28b809e7748b82e9eb89b0afd"
+    url "http://ftpmirror.gnu.org/mpfr/mpfr-3.1.5.tar.bz2", :using => :nounzip
+    sha256 "ca498c1c7a74dd37a576f353312d1e68d490978de4395fa28f1cbd46a364e658"
   end
 
   # ld: internal error: atom not found in symbolIndex(__ZN3vecINSt3__14pairIjPKcEE7va_heap6vl_ptrE7reserveEjb) for architecture x86_64
@@ -70,6 +72,7 @@ class SaturnSdkGccSh2 < Formula
     ENV["BUILDDIR"] = "#{buildpath}/build"
     ENV["TARGETMACH"] = "sh-elf"
     ENV["BUILDMACH"] = "#{arch}-apple-darwin#{osmajor}"
+    ENV["HOSTMACH"] = "#{arch}-apple-darwin#{osmajor}"
     ENV["INSTALLDIR"] = prefix.to_s
     # Ensures the temporary cross-compiler doesn't get moved to
     # outside a sandbox-writeable directory
@@ -84,11 +87,12 @@ class SaturnSdkGccSh2 < Formula
     system "./build-elf.sh"
 
     # The rest of the build is sandboxed appropriately, but this clashes with `gcc`
-    (prefix/"share/gcc-5.3.0/python").rmtree
+    (prefix/"share/gcc-6.2.0/python").rmtree
+    (prefix/"share/info").rmtree
   end
 
   test do
-    (testpath/"hello-c.c").write <<-EOS.undent
+    (testpath/"hello-c.c").write <<~EOS
       #include <stdio.h>
       int main()
       {
@@ -99,7 +103,7 @@ class SaturnSdkGccSh2 < Formula
     system "#{bin}/saturn-sh2-elf-gcc", "-o", "hello-c", "hello-c.c"
     assert_match /hello-c: ELF 32-bit MSB executable/, shell_output("/usr/bin/file hello-c")
 
-    (testpath/"hello-cc.cc").write <<-EOS.undent
+    (testpath/"hello-cc.cc").write <<~EOS
       #include <iostream>
       int main()
       {
