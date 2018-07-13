@@ -28,14 +28,12 @@ class SaturnSdkGccSh2 < Formula
   # All of these are normally downloaded by the download.sh script;
   # they're specified here as :nounzip resources so we can model and download them instead.
   resource "binutils" do
-    url "http://ftpmirror.gnu.org/binutils/binutils-2.27.tar.bz2", :using => :nounzip
-    mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.27.tar.bz2"
+    url "https://ftp.gnu.org/gnu/binutils/binutils-2.27.tar.bz2", :using => :nounzip
     sha256 "369737ce51587f92466041a97ab7d2358c6d9e1b6490b3940eb09fb0a9a6ac88"
   end
 
   resource "gcc" do
-    url "http://ftpmirror.gnu.org/gcc/gcc-6.2.0/gcc-6.2.0.tar.bz2", :using => :nounzip
-    mirror "https://ftp.gnu.org/gnu/gcc/gcc-6.2.0/gcc-6.2.0.tar.bz2"
+    url "https://ftp.gnu.org/gnu/gcc/gcc-6.2.0/gcc-6.2.0.tar.bz2", :using => :nounzip
     sha256 "9944589fc722d3e66308c0ce5257788ebd7872982a718aa2516123940671b7c5"
   end
 
@@ -45,8 +43,7 @@ class SaturnSdkGccSh2 < Formula
   end
 
   resource "libmpc" do
-    url "http://ftpmirror.gnu.org/mpc/mpc-1.0.3.tar.gz", :using => :nounzip
-    mirror "http://multiprecision.org/mpc/download/mpc-1.0.3.tar.gz"
+    url "https://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz", :using => :nounzip
     sha256 "617decc6ea09889fb08ede330917a00b16809b8db88c29c31bfbb49cbf88ecc3"
   end
 
@@ -56,7 +53,7 @@ class SaturnSdkGccSh2 < Formula
   end
 
   resource "mpfr" do
-    url "http://ftpmirror.gnu.org/mpfr/mpfr-3.1.5.tar.bz2", :using => :nounzip
+    url "https://ftp.gnu.org/gnu/mpfr/mpfr-3.1.5.tar.bz2", :using => :nounzip
     sha256 "ca498c1c7a74dd37a576f353312d1e68d490978de4395fa28f1cbd46a364e658"
   end
 
