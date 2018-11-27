@@ -73,6 +73,11 @@ class Ruby182 < Formula
     # Create the sitedir that was skipped during install
     mkdir_p `#{bin}/ruby -rrbconfig -e 'print Config::CONFIG["sitearchdir"]'`
   end
+
+  test do
+    hello_text = shell_output("#{bin}/ruby -e 'puts :hello'")
+    assert_equal "hello\n", hello_text
+  end
 end
 
 __END__
