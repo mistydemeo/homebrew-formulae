@@ -1,4 +1,4 @@
-class Ruby182 < Formula
+class RubyAT182 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/en/"
   url "http://cache.ruby-lang.org/pub/ruby/1.8/ruby-1.8.2.tar.gz"
