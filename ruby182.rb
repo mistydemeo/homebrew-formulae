@@ -17,14 +17,11 @@ class Ruby182 < Formula
   option :universal
   option "with-suffix", "Suffix commands with '182'"
   option "with-doc", "Install documentation"
-  option "with-tcltk", "Install with Tcl/Tk support"
 
   depends_on "pkg-config" => :build
   depends_on "libyaml"
   depends_on "openssl"
-  depends_on :x11 if build.with? "tcltk"
-  depends_on "readline" => :recommended
-  depends_on "gdbm" => :optional
+  depends_on "readline"
 
   # First patch fixes up a few incompatibilities with modern OpenSSL
   # ossl_x509stctx_set_time() definition taken from 1.8.6
@@ -46,7 +43,6 @@ class Ruby182 < Formula
     end
 
     args << "--program-suffix=182" if build.with? "suffix"
-    args << "--with-out-ext=tk" if build.without? "tcltk"
     args << "--disable-install-doc" if build.without? "doc"
     args << "--disable-dtrace" unless MacOS::CLT.installed?
     args << "--with-sitedir=#{HOMEBREW_PREFIX}/lib/ruby/site_ruby"
