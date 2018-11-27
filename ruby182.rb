@@ -2,7 +2,7 @@ class Ruby182 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/en/"
   url "http://cache.ruby-lang.org/pub/ruby/1.8/ruby-1.8.2.tar.gz"
-  mirror "http://mirrorservice.org/sites/ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.2.tar.bz2"
+  mirror "https://mirrorservice.org/sites/ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.2.tar.bz2"
   sha256 "34cf95791323c96dc92c672c16daaef69f00a0ba69e1c43bab893ae38b7eeb3e"
   revision 1
 
@@ -17,14 +17,11 @@ class Ruby182 < Formula
   option :universal
   option "with-suffix", "Suffix commands with '182'"
   option "with-doc", "Install documentation"
-  option "with-tcltk", "Install with Tcl/Tk support"
 
   depends_on "pkg-config" => :build
-  depends_on "readline" => :recommended
-  depends_on "gdbm" => :optional
   depends_on "libyaml"
   depends_on "openssl"
-  depends_on :x11 if build.with? "tcltk"
+  depends_on "readline"
 
   # First patch fixes up a few incompatibilities with modern OpenSSL
   # ossl_x509stctx_set_time() definition taken from 1.8.6
@@ -46,24 +43,36 @@ class Ruby182 < Formula
     end
 
     args << "--program-suffix=182" if build.with? "suffix"
-    args << "--with-out-ext=tk" if build.without? "tcltk"
     args << "--disable-install-doc" if build.without? "doc"
     args << "--disable-dtrace" unless MacOS::CLT.installed?
-
-    # Put gem, site and vendor folders in the HOMEBREW_PREFIX
-    ruby_lib = HOMEBREW_PREFIX/"lib/ruby"
-    (ruby_lib/"site_ruby").mkpath
-    (ruby_lib/"vendor_ruby").mkpath
-    (ruby_lib/"gems").mkpath
-
-    (lib/"ruby").install_symlink ruby_lib/"site_ruby",
-                                 ruby_lib/"vendor_ruby",
-                                 ruby_lib/"gems"
+    args << "--with-sitedir=#{HOMEBREW_PREFIX}/lib/ruby/site_ruby"
 
     system "./configure", *args
+
+    # Ruby has been configured to look in the HOMEBREW_PREFIX for the
+    # sitedir directory; however we don't actually want to create
+    # them during the install.
+    #
+    # These directories are empty on install; sitedir is used for non-rubygems
+    # third party libraries
+    inreplace "instruby.rb" do |s|
+      s.gsub! "makedirs [bindir, libdir, rubylibdir, archlibdir, sitelibdir, sitearchlibdir]",
+              "makedirs [bindir, libdir, rubylibdir, archlibdir]"
+    end
+
     system "make"
     system "make", "install"
     system "make", "install-doc" if build.with? "doc"
+  end
+
+  def post_install
+    # Create the sitedir that was skipped during install
+    mkdir_p `#{bin}/ruby -rrbconfig -e 'print Config::CONFIG["sitearchdir"]'`
+  end
+
+  test do
+    hello_text = shell_output("#{bin}/ruby -e 'puts :hello'")
+    assert_equal "hello\n", hello_text
   end
 end
 
