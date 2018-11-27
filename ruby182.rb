@@ -49,21 +49,29 @@ class Ruby182 < Formula
     args << "--with-out-ext=tk" if build.without? "tcltk"
     args << "--disable-install-doc" if build.without? "doc"
     args << "--disable-dtrace" unless MacOS::CLT.installed?
-
-    # Put gem, site and vendor folders in the HOMEBREW_PREFIX
-    ruby_lib = HOMEBREW_PREFIX/"lib/ruby"
-    (ruby_lib/"site_ruby").mkpath
-    (ruby_lib/"vendor_ruby").mkpath
-    (ruby_lib/"gems").mkpath
-
-    (lib/"ruby").install_symlink ruby_lib/"site_ruby",
-                                 ruby_lib/"vendor_ruby",
-                                 ruby_lib/"gems"
+    args << "--with-sitedir=#{HOMEBREW_PREFIX}/lib/ruby/site_ruby"
 
     system "./configure", *args
+
+    # Ruby has been configured to look in the HOMEBREW_PREFIX for the
+    # sitedir directory; however we don't actually want to create
+    # them during the install.
+    #
+    # These directories are empty on install; sitedir is used for non-rubygems
+    # third party libraries
+    inreplace "instruby.rb" do |s|
+      s.gsub! 'makedirs [bindir, libdir, rubylibdir, archlibdir, sitelibdir, sitearchlibdir]',
+              "makedirs [bindir, libdir, rubylibdir, archlibdir]"
+    end
+
     system "make"
     system "make", "install"
     system "make", "install-doc" if build.with? "doc"
+  end
+
+  def post_install
+    # Create the sitedir that was skipped during install
+    mkdir_p `#{bin}/ruby -rrbconfig -e 'print Config::CONFIG["sitearchdir"]'`
   end
 end
 
