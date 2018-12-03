@@ -1,9 +1,9 @@
 class MosaicCk < Formula
   homepage "http://www.floodgap.com/retrotech/machten/mosaic/"
-  url "http://www.floodgap.com/retrotech/machten/mosaic/mosaic27ck10.tar.gz"
-  sha256 "6d95d5e3ce34fe04c0eac7bdb81fc5cf7970f35f4f0e872add63d9ec729f5710"
+  url "http://www.floodgap.com/retrotech/machten/mosaic/mosaic27ck11-src.zip"
+  sha256 "4ca13a471e86b06ec69e41b5142f1333df9b3d0cdf17cc9fea2105ce6cbcad10"
   # Homebrew gets confused about the real version number
-  version "2.7-10ck"
+  version "2.7-11ck"
 
   depends_on :x11
   depends_on "openmotif"
@@ -20,6 +20,12 @@ class MosaicCk < Formula
   patch do
     url "https://github.com/duckinator/mosaic-ck/commit/ffbb7ad9166da3f5d3524d63fb30469ba12c85e6.diff"
     sha256 "4afb89c3c3541403b673e893bc4bc140a6901a7deae9c039fabf1617635e1ab6"
+  end
+
+  # Restores prebuilt XPM files that were deleted from 2.7-11ck
+  patch do
+    url "https://github.com/mistydemeo/mosaic-ck/commit/971273faecec338e4a6a57a072172e18fa08f090.diff"
+    sha256 "cea42ea8c4549201f4b265ee28379f67493738339a6817ac65841171f8501388"
   end
 
   def install
