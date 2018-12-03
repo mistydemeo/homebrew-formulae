@@ -1,25 +1,32 @@
 class MosaicCk < Formula
+  desc "NCSA Mosaic for modern Macs"
   homepage "http://www.floodgap.com/retrotech/machten/mosaic/"
-  url "http://www.floodgap.com/retrotech/machten/mosaic/mosaic27ck10.tar.gz"
-  sha256 "6d95d5e3ce34fe04c0eac7bdb81fc5cf7970f35f4f0e872add63d9ec729f5710"
+  url "http://www.floodgap.com/retrotech/machten/mosaic/mosaic27ck11-src.zip"
   # Homebrew gets confused about the real version number
-  version "2.7-10ck"
+  version "2.7-11ck"
+  sha256 "4ca13a471e86b06ec69e41b5142f1333df9b3d0cdf17cc9fea2105ce6cbcad10"
 
-  depends_on :x11
-  depends_on "openmotif"
   depends_on "jpeg"
   depends_on "libpng"
+  depends_on "openmotif"
+  depends_on :x11
 
   # Fixes build against modern libpng
   patch do
-    url "https://github.com/mistydemeo/mosaic-ck/commit/32eb14ee8d65616c953e965c6a8b1d754eedc7a0.diff"
-    sha256 "a3b2aa7014769d3a36fda3b8de137db5d100ee182a5520982ff87b85c0fe9556"
+    url "https://github.com/mistydemeo/mosaic-ck/commit/32eb14ee8d65616c953e965c6a8b1d754eedc7a0.diff?full_index=1"
+    sha256 "9e20e8362ab21182839572a1b58b0ae7d092bf67b1a6b03ebfe55f258c037b1d"
   end
 
   # Fix redirects for URLs on the same domain
   patch do
-    url "https://github.com/duckinator/mosaic-ck/commit/ffbb7ad9166da3f5d3524d63fb30469ba12c85e6.diff"
-    sha256 "4afb89c3c3541403b673e893bc4bc140a6901a7deae9c039fabf1617635e1ab6"
+    url "https://github.com/duckinator/mosaic-ck/commit/ffbb7ad9166da3f5d3524d63fb30469ba12c85e6.diff?full_index=1"
+    sha256 "0d91e372e64e46cf37ba347894a854c5fed143891c7981308b7576e852e8fb27"
+  end
+
+  # Restores prebuilt XPM files that were deleted from 2.7-11ck
+  patch do
+    url "https://github.com/mistydemeo/mosaic-ck/commit/971273faecec338e4a6a57a072172e18fa08f090.diff?full_index=1"
+    sha256 "ddf6c8dfa5050419061b85c7db214843f0f856c5867623376ffe97db14634598"
   end
 
   def install
