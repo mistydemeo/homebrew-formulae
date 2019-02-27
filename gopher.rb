@@ -1,8 +1,8 @@
 class Gopher < Formula
   desc "Curses-based Gopher client"
   homepage "http://gopher.quux.org:70/give-me-gopher/"
-  url "http://archive.ubuntu.com/ubuntu/pool/universe/g/gopher/gopher_3.0.13.tar.gz"
-  sha256 "93ef1d9cbcda7e94c77592c6ae997260b5314a1e40887a38874cd40ebc7e1c96"
+  url "http://archive.ubuntu.com/ubuntu/pool/universe/g/gopher/gopher_3.0.16.tar.gz"
+  sha256 "7af661f7cce7d3b11ef2b595230d5b575f7ecb9f840a5edfaea6d284369b57bb"
 
   def install
     # This is tremendously ugly!
