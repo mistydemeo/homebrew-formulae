@@ -3,6 +3,7 @@ class Pcdtojpeg < Formula
   homepage "https://pcdtojpeg.sourceforge.io/Home.html"
   url "https://cfhcable.dl.sourceforge.net/project/pcdtojpeg/pcdtojpeg/pcdtojpeg%201.0.12/pcdtojpeg_1_0_12.zip"
   sha256 "99dff025349550b42d8db2666f9c6011a327d1db137d6083aa0b84a440963cf6"
+  license "GPL-2.0-or-later"
 
   depends_on "jpeg"
 
