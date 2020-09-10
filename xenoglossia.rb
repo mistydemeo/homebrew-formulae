@@ -3,6 +3,7 @@ class Xenoglossia < Formula
   homepage "https://github.com/mistydemeo/xenoglossia"
   url "https://github.com/mistydemeo/xenoglossia/archive/v0.2.tar.gz"
   sha256 "0c26359a05d2feaa7ae5c90c3d68819aa5d36faa1307f531b66b37fdbef1703c"
+  license "WTFPL"
 
   depends_on :python if MacOS.version <= :snow_leopard
 
