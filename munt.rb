@@ -1,8 +1,8 @@
 class Munt < Formula
   desc "Roland MT-32 emulator library and MIDI conversion tool"
   homepage "https://github.com/munt/munt"
-  url "https://github.com/munt/munt/archive/munt_2_3_0.tar.gz"
-  sha256 "73bd1f4f67bfec241748ed86d882df12a12b33ac33b9770a65fd37c399c81c2f"
+  url "https://github.com/munt/munt/archive/libmt32emu_2_4_0.tar.gz"
+  sha256 "3a53a5ad59e7c92de10e81b9c50d00e5e249aa66e6d2d928d042392db963f2b9"
   license "GPL-3.0-or-later"
 
   depends_on "cmake" => :build
