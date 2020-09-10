@@ -3,6 +3,7 @@ class Munt < Formula
   homepage "https://github.com/munt/munt"
   url "https://github.com/munt/munt/archive/munt_2_3_0.tar.gz"
   sha256 "73bd1f4f67bfec241748ed86d882df12a12b33ac33b9770a65fd37c399c81c2f"
+  license "GPL-3.0-or-later"
 
   depends_on "cmake" => :build
   depends_on "glib"
