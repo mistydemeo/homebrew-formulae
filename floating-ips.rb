@@ -2,6 +2,7 @@ class FloatingIps < Formula
   desc "IPS and BPS patching tool"
   homepage "https://github.com/Alcaro/Flips"
   head "https://github.com/Alcaro/Flips.git"
+  license "GPL-3.0-or-later"
 
   stable do
     url "https://dl.smwcentral.net/11474/floating.zip"
