@@ -1,6 +1,7 @@
 class Gbdk < Formula
   homepage "http://gbdk.sourceforge.net/"
   head "https://github.com/qatsindio/gbdk.git"
+  license "GPL-2.0-or-later"
 
   patch :p0 do
     url "https://raw.githubusercontent.com/co-me/gbdk/c8dc0a57e94a5c68555355585649f83c6c0b5032/macosx.patch"
