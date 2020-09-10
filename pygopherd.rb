@@ -1,8 +1,8 @@
 class Pygopherd < Formula
   desc "Python Gopher server"
   homepage "http://gopher.quux.org:70/devel/gopher/pygopherd"
-  url "https://github.com/jgoerzen/pygopherd/archive/debian/2.0.18.3.tar.gz"
-  sha256 "e13307bd66c7cd0c4d09127e57744f2b32c819c5d5921d1fa6897164f4363e1e"
+  url "https://github.com/jgoerzen/pygopherd/archive/debian/2.0.18.4.tar.gz"
+  sha256 "32b330d72afa3d4b44b2257af0235fc22f9ffbd302daf2f7054e25b3be8f2126"
   license "GPL-2.0"
 
   def install
