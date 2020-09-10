@@ -4,6 +4,7 @@ class RubyAT182 < Formula
   url "http://cache.ruby-lang.org/pub/ruby/1.8/ruby-1.8.2.tar.gz"
   mirror "https://mirrorservice.org/sites/ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.2.tar.bz2"
   sha256 "34cf95791323c96dc92c672c16daaef69f00a0ba69e1c43bab893ae38b7eeb3e"
+  license "Ruby"
   revision 1
 
   bottle do
