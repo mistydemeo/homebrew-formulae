@@ -4,6 +4,7 @@ class Sfnt2woff < Formula
   url "https://web.archive.org/web/20160304124743/http://people.mozilla.org/~jkew/woff/woff-code-latest.zip"
   sha256 "7713630d2f43320a1d92e2dbb014ca3201caab1dd4c0ab92816016824c680d96"
   version "2009-10-04"
+  license "MPL-1.1"
 
   def install
     system "make"
