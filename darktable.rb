@@ -2,6 +2,7 @@ class Darktable < Formula
   homepage "http://www.darktable.org/"
   url "https://downloads.sourceforge.net/project/darktable/darktable/1.0/darktable-1.0.5.tar.gz"
   sha256 "0c18530446d2f2459fe533a1ef6fc2711300efe7466f36c23168ec2230fb5fbd"
+  license "GPL-3.0-or-later"
 
   depends_on "cmake" => :build
   depends_on "intltool" => :build
