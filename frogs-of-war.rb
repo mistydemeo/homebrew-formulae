@@ -1,7 +1,7 @@
 class FrogsOfWar < Formula
   desc "1-8 player action game"
-  homepage "http://www.fullsack.com/frogs/frogs.html"
-  url "http://www.fullsack.com/frogs/fow-2.2.tar.gz"
+  homepage "http://web.archive.org/web/20190114033419/http://www.fullsack.com/frogs/frogs.html"
+  url "http://web.archive.org/web/20190428032533/http://www.fullsack.com/frogs/fow-2.2.tar.gz"
   sha256 "5ba216d5df2b8b3bfb9709d6a487e986f18a931c8e2ae519828363742b576999"
 
   depends_on "sdl"
