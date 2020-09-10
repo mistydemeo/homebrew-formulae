@@ -2,6 +2,7 @@ class Selfie < Formula
   desc "Easy-peasy selfie-taking script"
   homepage "https://gitlab.com/grapegravity/dotfiles/"
   head "https://gitlab.com/grapegravity/dotfiles.git"
+  license "MIT"
 
   depends_on "imagesnap"
 
