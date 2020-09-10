@@ -13,7 +13,7 @@ class Badpng < Formula
   end
 
   test do
-    test_png = HOMEBREW_LIBRARY/"Homebrew/test/fixtures/test.png"
+    test_png = HOMEBREW_LIBRARY/"Homebrew/test/support/fixtures/test.png"
     system "badpng", test_png, "out.png"
   end
 end
