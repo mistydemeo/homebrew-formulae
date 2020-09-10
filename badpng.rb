@@ -1,6 +1,5 @@
-require "formula"
-
 class Badpng < Formula
+  desc "Corrupt PNG files"
   homepage "https://github.com/mcclure/bitbucket-backup/tree/archive/repos/badpng"
   head "https://github.com/mcclure/bitbucket-backup.git", branch: "archive"
 
