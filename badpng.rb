@@ -1,13 +1,15 @@
 require "formula"
 
 class Badpng < Formula
-  homepage "https://bitbucket.org/runhello/badpng"
-  head "https://bitbucket.org/runhello/badpng", :using => :hg
+  homepage "https://github.com/mcclure/bitbucket-backup/tree/archive/repos/badpng"
+  head "https://github.com/mcclure/bitbucket-backup.git", branch: "archive"
 
   def install
-    system "make"
-    bin.install "badpng"
-    man1.install "badpng.1"
+    cd "repos/badpng/contents" do
+      system "make"
+      bin.install "badpng"
+      man1.install "badpng.1"
+    end
   end
 
   test do
