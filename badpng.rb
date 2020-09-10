@@ -2,6 +2,7 @@ class Badpng < Formula
   desc "Corrupt PNG files"
   homepage "https://github.com/mcclure/bitbucket-backup/tree/archive/repos/badpng"
   head "https://github.com/mcclure/bitbucket-backup.git", branch: "archive"
+  license "CC0-1.0"
 
   def install
     cd "repos/badpng/contents" do
