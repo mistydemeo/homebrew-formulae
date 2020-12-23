@@ -4,6 +4,7 @@ class Mksdiso < Formula
   url "https://github.com/Nold360/mksdiso/archive/v0.9.2.tar.gz"
   sha256 "de80c68d73de03d2c111765dd82251626c681f6c5127acff77ba27befb2059f1"
   license "BSD-2-Clause"
+  head "https://github.com/Nold360/mksdiso.git"
 
   depends_on "cdirip"
   depends_on "cdrtools"
