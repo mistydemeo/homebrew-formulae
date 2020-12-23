@@ -10,6 +10,10 @@ class Mksdiso < Formula
   depends_on "p7zip"
 
   def install
+    pkgshare.install Dir["mksdiso/*"]
+
+    inreplace "bin/mksdiso", "DATADIR=$HOME/.mksdiso", "DATADIR=#{pkgshare}"
+
     bin.install "bin/burncdi", "bin/mksdiso"
 
     cd "src" do
