@@ -7,6 +7,7 @@ class Mksdiso < Formula
 
   depends_on "cdirip"
   depends_on "cdrtools"
+  depends_on "p7zip"
 
   def install
     bin.install "bin/burncdi", "bin/mksdiso"
