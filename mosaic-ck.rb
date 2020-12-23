@@ -9,7 +9,7 @@ class MosaicCk < Formula
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "openmotif"
-  depends_on :x11
+  depends_on "libx11"
 
   # Fixes build against modern libpng
   patch do
