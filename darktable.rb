@@ -22,7 +22,7 @@ class Darktable < Formula
   depends_on "librsvg"
   depends_on "flickcurl"
   depends_on "lensfun"
-  depends_on :x11
+  depends_on "libx11"
 
   def install
     # The default interpolation results in -D_DARWIN_C_SOURCE being
