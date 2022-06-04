@@ -8,13 +8,11 @@ class Pcdtojpeg < Formula
   depends_on "jpeg"
 
   def install
-    cd "pcdtojpeg_1_0_12" do
-      cd "src" do
-        system ENV.cxx, "main.cpp", "pcdDecode.cpp", "-ljpeg", "-o", "pcdtojpeg"
-        bin.install "pcdtojpeg"
-      end
-      doc.install Dir["Documentation/*"]
+    cd "src" do
+      system ENV.cxx, "main.cpp", "pcdDecode.cpp", "-ljpeg", "-o", "pcdtojpeg"
+      bin.install "pcdtojpeg"
     end
+    doc.install Dir["Documentation/*"]
   end
 
   # Can't test real functionality without a Photo CD file. There are no
