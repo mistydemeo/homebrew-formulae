@@ -1,11 +1,14 @@
 class LibcueStatic < Formula
   desc "Statically-build version of libcue"
   homepage "https://github.com/lipnitsk/libcue"
-  url "https://github.com/lipnitsk/libcue/archive/v2.2.1.tar.gz"
-  sha256 "f27bc3ebb2e892cd9d32a7bee6d84576a60f955f29f748b9b487b173712f1200"
+  url "https://github.com/lipnitsk/libcue/archive/v2.3.0.tar.gz"
+  sha256 "cc1b3a65c60bd88b77a1ddd1574042d83cf7cc32b85fe9481c99613359eb7cfe"
   license "GPL-2.0"
 
   depends_on "cmake" => :build
+
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
 
   keg_only "Copy of libcue library"
 
