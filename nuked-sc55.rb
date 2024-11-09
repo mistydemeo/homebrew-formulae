@@ -6,6 +6,7 @@ class NukedSc55 < Formula
   head "https://github.com/nukeykt/Nuked-SC55.git", branch: "master"
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "sdl2"
 
   # Fixes configuration file path on macOS
