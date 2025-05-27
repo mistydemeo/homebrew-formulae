@@ -1,20 +1,20 @@
 class Cue2ccd < Formula
   desc "Tool to convert BIN/CUE disc images to CCD/IMG/SUB"
   homepage "https://www.mistys-internet.website/cue2ccd/"
-  version "1.0.2"
+  version "1.0.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mistydemeo/cue2ccd/releases/download/v1.0.2/cue2ccd-aarch64-apple-darwin.tar.xz"
-      sha256 "6f198ec50e2a9d2331a0515e93567e65398550f5a6aa10ea0442013245ea5af1"
+      url "https://github.com/mistydemeo/cue2ccd/releases/download/v1.0.3/cue2ccd-aarch64-apple-darwin.tar.xz"
+      sha256 "5cc199efca44e4616377c76901b672ad9a27534b42349418c13ce8bcd88000f2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mistydemeo/cue2ccd/releases/download/v1.0.2/cue2ccd-x86_64-apple-darwin.tar.xz"
-      sha256 "a04d741f3e9b3053ab48583ccd6514c8b8f15c34b1c7e3f767043a6849b22381"
+      url "https://github.com/mistydemeo/cue2ccd/releases/download/v1.0.3/cue2ccd-x86_64-apple-darwin.tar.xz"
+      sha256 "857cef7bf0fd7f5267dac7ee68fa3bce514c7ff4577011c4b7da638a75289b15"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/mistydemeo/cue2ccd/releases/download/v1.0.2/cue2ccd-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "ced32d40b01511198c5987f37c78b28d690b1a3b44a605c4903c8981bef2e882"
+    url "https://github.com/mistydemeo/cue2ccd/releases/download/v1.0.3/cue2ccd-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "4643bcb7d227b8871d665f3250e516f45522eb4a3a885473850df96cb5523dfd"
   end
 
   BINARY_ALIASES = {
