@@ -7,11 +7,8 @@ class LibusbLegacy < Formula
 
   keg_only "This is an older version of libusb."
 
-  option :universal
-
   def install
     ENV.libstdcxx # not even going to *try* libc++ on something this old
-    ENV.universal_binary if build.universal?
     ENV.deparallelize # 2002, natch
 
     system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
