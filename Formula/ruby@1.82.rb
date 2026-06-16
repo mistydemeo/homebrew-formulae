@@ -9,7 +9,6 @@ class RubyAT182 < Formula
 
   keg_only :provided_by_macos
 
-  option :universal
   option "with-suffix", "Suffix commands with '182'"
   option "with-doc", "Install documentation"
 
@@ -31,11 +30,6 @@ class RubyAT182 < Formula
     ENV.prepend "LDFLAGS", "-L."
 
     args = %W[--prefix=#{prefix} --mandir=#{man} --enable-shared --with-openssl-dir=#{Formula["openssl"].opt_prefix}]
-
-    if build.universal?
-      ENV.universal_binary
-      args << "--with-arch=#{Hardware::CPU.universal_archs.join(",")}"
-    end
 
     args << "--program-suffix=182" if build.with? "suffix"
     args << "--disable-install-doc" if build.without? "doc"
